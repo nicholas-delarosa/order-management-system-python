@@ -156,11 +156,11 @@ def create_order(customer_id):
 
 def add_products_order(id_order, product_id, quantity_order, cont):
     
-    customer_name = product_database[product_id][2]
+    product_name = product_database[product_id][0]
 
     total = quantity_order * product_database[product_id][1]
     
-    order_database[id_order]["producto"+str(cont)] = (product_id,customer_name,quantity_order,total)
+    order_database[id_order]["producto"+str(cont)] = (product_id,product_name,quantity_order,total)
 
 
 
@@ -499,7 +499,7 @@ while ws:
 
             for cc, data in Products_history.items():
                 print(
-                    f"\033[1;32m{cc:<5} {data[1]:<22} {data[3]:<20} {data[2]:<10} {data[1]:<10}\033[0m"
+                    f"\033[1;32m{cc:<5} {data[0]:<22} {data[3]:<20} {data[2]:<10} {data[1]:<10}\033[0m"
                 )
                 print("\033[34m" + "-"*80 + "\033[0m")
 
@@ -560,7 +560,7 @@ while ws:
 
         for cc, data in product_database.items():
             print(
-                f"\033[1;32m{cc:<5} {data[1]:<22} {data[3]:<20} {data[2]:<10} {data[1]:<10}\033[0m"
+                f"\033[1;32m{cc:<5} {data[0]:<22} {data[3]:<20} {data[2]:<10} {data[1]:<10}\033[0m"
                 )
             print("\033[34m" + "-"*80 + "\033[0m")
 
@@ -626,7 +626,7 @@ while ws:
 
             exit = confirm_exit()
             if exit == True:
-                cr_act = False
+                or_act = False
             else:
                 cont += 1
                 continue
