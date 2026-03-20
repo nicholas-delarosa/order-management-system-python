@@ -1,6 +1,6 @@
 import database
 
-def daily_income_calculation():
+def Daily_Income_Calculation():
 
     # Variable to store the total income of the day
     total_sum = 0
