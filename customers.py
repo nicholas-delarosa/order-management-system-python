@@ -2,7 +2,7 @@ import validations
 import database
 import utilities
 
-def Customer_Registration():
+def customer_registration():
 
             # Dictionary to store customers created during this session
             customer_history = {}
@@ -172,6 +172,32 @@ def Customer_Registration():
 
 
 def customer_registration(customer_id, customer_name, customer_email, customer_phone,customer_history):
+    """
+    Function: customer_registration
+
+    Parameters:
+
+    - customer_id:
+    Represents the customer's identification number (ID or "cédula").
+    It is used as a unique identifier for each customer in the system.
+
+    - customer_name:
+    Stores the full name of the customer.
+
+    - customer_email:
+    Contains the customer's email address (e.g., Gmail or any valid email).
+    This is used for contact or notification purposes.
+
+    - customer_phone:
+    Represents the customer's phone number.
+    It can be used for direct communication or verification.
+
+    - customer_history:
+    A dictionary structure used to store and manage the history
+    of registered customers. This may include past interactions,
+    orders, or any relevant data associated with each customer.
+    """
+
 
     # Generate auto-incremental ID based on database size
     id_customer = len(database.customer_database)+1

@@ -2,7 +2,7 @@ import validations
 import database
 import utilities
 
-def View_Registered_Orders():
+def view_registered_orders():
 
             # Validate if required databases are empty
             if database.product_database == {} or database.customer_database == {} or database.order_database == {}:
@@ -49,6 +49,23 @@ def View_Registered_Orders():
 
 
 def orders_consult(order_db,field_value):
+        """
+        Function: orders_consult
+
+        Parameters:
+
+        - order_db:
+        Dictionary that stores all customer orders.
+        Each entry contains the information related to orders made by customers.
+
+        - field_value:
+        Represents the customer's ID ("cédula") used to search within the database.
+        This value is used to find and display all orders associated with that specific customer.
+
+        Description:
+        This function searches the order database using the provided customer ID
+        and displays the order history corresponding to that customer.
+        """
         
         # Flag to check if the user has orders
         has_orders = False

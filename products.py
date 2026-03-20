@@ -2,10 +2,10 @@ import validations
 import database
 import utilities
 
-def Product_Registration():
+def product_registration():
 
             # Dictionary to store products created during this session
-            Products_history = {}
+            products_history = {}
 
             # Control variable to keep the registration active
             pr_act = True
@@ -123,7 +123,7 @@ def Product_Registration():
                 print("\n\033[34m" + "-"*60 + "\033[0m")
 
                 # Register product in database and history
-                register_product(product_name, product_price, product_stock, product_categorie,Products_history)
+                register_product(product_name, product_price, product_stock, product_categorie,products_history)
 
                 # Ask user if they want to continue
                 exit = utilities.confirm_exit()
@@ -142,7 +142,7 @@ def Product_Registration():
                 print("-"*80 + "\033[0m")
 
                 # Iterate and display created products
-                for cc, data in Products_history.items():
+                for cc, data in products_history.items():
                     print(
                         f"\033[1;32m{cc:<5} {data[0]:<22} {data[3]:<20} {data[2]:<10} {data[1]:<10}\033[0m"
                     )
@@ -152,7 +152,33 @@ def Product_Registration():
                 print("\033[34m" + "-"*60 + "\033[0m\n")
 
 
-def register_product(product_name, product_price, product_stock, product_categorie,Products_history):
+def register_product(product_name, product_price, product_stock, product_categorie,products_history):
+    """
+    Function: register_product
+
+    Parameters:
+
+    - product_name:
+    Represents the name of the product to be registered.
+
+    - product_price:
+    Indicates the price of the product.
+
+    - product_stock:
+    Represents the available quantity (stock) of the product.
+
+    - product_categorie:
+    Specifies the category to which the product belongs
+    (e.g., food, drinks, etc.).
+
+    - Products_history:
+    Dictionary that stores the history of the most recently created products.
+    It is used to keep track of all registered products and their information.
+
+    Description:
+    This function registers a new product in the system and stores its
+    information in the products history dictionary for future reference.
+    """
 
     # Generate new product ID
     id_product = len(database.product_database) + 1
@@ -161,4 +187,4 @@ def register_product(product_name, product_price, product_stock, product_categor
     database.product_database [id_product] = (product_name,product_price,product_stock,database.product_categories[product_categorie-1])
 
     # Store product in temporary history
-    Products_history [id_product] = (product_name,product_price,product_stock,database.product_categories[product_categorie-1])
+    products_history [id_product] = (product_name,product_price,product_stock,database.product_categories[product_categorie-1])

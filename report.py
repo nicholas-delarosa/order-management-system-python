@@ -84,6 +84,13 @@ report_data[row_id] = ("TOTAL REGISTERED PRODUCTS", total_registered_products)
 
 
 def generate_final_report(filename="final_report.csv"):
+    """
+    Function: generate_final_report
+
+    Description:
+    This function generates a final report file in CSV format
+    with the system's stored information.
+    """
 
     # Open CSV file in write mode
     with open(filename, mode='w', newline='', encoding='utf-8') as file:

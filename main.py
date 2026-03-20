@@ -51,26 +51,26 @@ while ws:
     # Option 1: Call customer registration function
     if option == "1":
 
-        customers.Customer_Registration()
+        customers.customer_registration()
 
     # Option 2: Call product registration function
     elif option == "2":
             
-        products.Product_Registration()
+        products.product_registration()
         
     # Option 3: Call order creation function
     elif option == "3":
 
-        orders.Order_Creation()
+        orders.order_creation()
 
     # Option 4: Display registered orders
     elif option == "4":
 
-        orders_view.View_Registered_Orders()
+        orders_view.view_registered_orders()
            
     # Option 5: Calculate daily income
     elif option == "5":
-        daily_totals.Daily_Income_Calculation()
+        daily_totals.daily_income_calculation()
 
     # Option 6: Generate final report
     elif option == "6":
