@@ -75,12 +75,12 @@ for customer_cc, customer_info in customers_db.items():
     row_id = len(report_data) + 1
     report_data[row_id] = (" ")
 
-    # Add global totals (repeated per customer)
-    row_id = len(report_data) + 1
-    report_data[row_id] = ("TOTAL DAILY REVENUE", total_daily_revenue)
+# Add global totals (repeated per customer)
+row_id = len(report_data) + 1
+report_data[row_id] = ("TOTAL DAILY REVENUE", total_daily_revenue)
 
-    row_id = len(report_data) + 1
-    report_data[row_id] = ("TOTAL REGISTERED PRODUCTS", total_registered_products)
+row_id = len(report_data) + 1
+report_data[row_id] = ("TOTAL REGISTERED PRODUCTS", total_registered_products)
 
 
 def generate_final_report(filename="final_report.csv"):
