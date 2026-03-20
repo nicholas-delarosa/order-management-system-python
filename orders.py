@@ -2,10 +2,10 @@ import validations
 import database
 import utilities
 
-def order_creation():
+def Order_Creation():
 
             # Dictionary to store order history during the session
-            order_history = {}
+            Order_history = {}
 
             # Control variable to keep adding products
             or_act = True
@@ -131,7 +131,7 @@ def order_creation():
                 print("\n\033[34m" + "-"*60 + "\033[0m")
 
                 # Add product to order
-                add_products_order(id_order, product_id, quantity_order, cont, order_history)
+                add_products_order(id_order, product_id, quantity_order, cont, Order_history)
 
                 # Ask user if they want to continue adding products
                 exit = utilities.confirm_exit()
@@ -142,13 +142,13 @@ def order_creation():
                     continue
 
                 # ===== PRODUCTS CREATION HISTORY =====
-                display_order_summary(order_history)
+                display_order_summary(Order_history)
 
                 # Final separator
                 print("\033[34m" + "-"*60 + "\033[0m\n")
 
 
-def create_order(customer_id,order_history):
+def create_order(customer_id,Order_history):
     
     # Generate new order ID
     id_order = len(database.order_database) + 1
@@ -171,7 +171,7 @@ def create_order(customer_id,order_history):
     return id_order
 
 
-def add_products_order(id_order, product_id, quantity_order, cont, order_history):
+def add_products_order(id_order, product_id, quantity_order, cont, Order_history):
     
     # Get product name
     product_name = database.product_database[product_id][0]
@@ -181,7 +181,7 @@ def add_products_order(id_order, product_id, quantity_order, cont, order_history
     
     # Store product in order (main database and history)
     database.order_database[id_order]["producto"+str(cont)] = (product_id,product_name,quantity_order,total)
-    order_history[id_order]["producto"+str(cont)] = (product_id,product_name,quantity_order,total)
+    Order_history[id_order]["producto"+str(cont)] = (product_id,product_name,quantity_order,total)
 
 
 def display_order_summary(order_db):
