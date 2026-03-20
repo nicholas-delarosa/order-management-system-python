@@ -64,12 +64,6 @@ def customer_registration():
                         print(error)
                         continue  
 
-                    # Validate that input contains only letters
-                    error = validations.validate_only_letters(user_full_name, "Full Name")
-                    if error:
-                        print(error)
-                        continue
-                        
                     # Exit loop if valid
                     break
 

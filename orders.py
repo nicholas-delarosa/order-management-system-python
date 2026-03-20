@@ -118,7 +118,7 @@ def order_creation():
                     stock = database.product_database[product_id][2]
 
                     # Validate stock availability
-                    error = validations.validate_sale(stock, 3, quantity_order)
+                    error = validations.validate_sale(stock, 0, quantity_order)
                     if error:
                         print(error)
                         continue
